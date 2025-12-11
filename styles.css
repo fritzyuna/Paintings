@@ -1,0 +1,1050 @@
+/* ============================================
+   Art of the Century - Main Stylesheet
+   ============================================ */
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Palette - Will be updated to match Figma exactly */
+    --primary-color: #1E1E1E;
+    --secondary-color: #F5F5F5;
+    --accent-color: #D4AF37;
+    --text-dark: #1E1E1E;
+    --text-light: #666666;
+    --background-white: #FFFFFF;
+    --background-light: #FAFAFA;
+    --border-color: #E0E0E0;
+    
+    /* Typography */
+    --font-primary: 'Old Standard TT', serif;
+    --font-script: 'Seaweed Script', cursive;
+    --font-serif: 'PT Serif', serif;
+    --font-sans: 'Inter', sans-serif;
+    --font-inria: 'Inria Sans', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    background-color: var(--background-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   Header Styles
+   ============================================ */
+
+.header {
+    background-color: var(--background-white);
+    padding: var(--spacing-sm) 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.home-link {
+    display: flex;
+    align-items: center;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+}
+
+.home-link:hover {
+    opacity: 0.7;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.logo-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin: 0;
+    font-style: italic;
+}
+
+.nav-menu {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.search-icon,
+.cart-icon,
+.profile-icon,
+.like-icon {
+    position: relative;
+    cursor: pointer;
+    color: var(--text-dark);
+    transition: color var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-icon:hover,
+.cart-icon:hover,
+.profile-icon:hover,
+.like-icon:hover {
+    color: var(--accent-color);
+}
+
+.like-icon.active {
+    color: #ff4444;
+}
+
+.like-icon.active .heart-filled {
+    display: block !important;
+}
+
+.like-icon.active .heart-outline {
+    display: none;
+}
+
+.cart-badge,
+.profile-badge,
+.like-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--accent-color);
+    color: var(--background-white);
+    font-size: 0.625rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+    z-index: 10;
+}
+
+.like-badge {
+    background-color: #ff4444;
+}
+
+.btn {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--text-dark);
+    background-color: transparent;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background-color: var(--text-dark);
+    color: var(--background-white);
+}
+
+.btn-login {
+    border-color: var(--text-dark);
+}
+
+.btn-signup {
+    background-color: var(--text-dark);
+    color: var(--background-white);
+}
+
+.btn-signup:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.nav-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin-top: var(--spacing-sm);
+}
+
+/* ============================================
+   Welcome Section
+   ============================================ */
+
+.welcome-section {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Background image - works with GitHub Pages relative paths */
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(30, 30, 30, 0.6) 100%),
+                url('images/welcome-background.jpg') center/cover,
+                url('https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1920') center/cover;
+    background-attachment: fixed;
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+/* Ensure images load properly on GitHub Pages */
+.art-item-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    background-color: var(--background-light);
+    display: block;
+}
+
+/* Fallback for missing images */
+.art-item-image[src=""],
+.art-item-image:not([src]) {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.art-item-image[src=""]::after,
+.art-item-image:not([src])::after {
+    content: "Image Loading...";
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.welcome-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(30, 30, 30, 0.4);
+    z-index: 1;
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.welcome-title {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--background-white);
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.search-container {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--background-white);
+    border-radius: 50px;
+    padding: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 1rem 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-dark);
+    background: transparent;
+}
+
+.search-input::placeholder {
+    color: var(--text-light);
+}
+
+.search-btn {
+    background-color: var(--text-dark);
+    color: var(--background-white);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.search-btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Inline Search (for paintings page) */
+.search-container-inline {
+    display: flex;
+    align-items: center;
+    background-color: var(--background-light);
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    gap: var(--spacing-xs);
+}
+
+.search-input-inline {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--text-dark);
+    width: 200px;
+}
+
+.search-input-inline::placeholder {
+    color: var(--text-light);
+}
+
+.search-btn-inline {
+    background: transparent;
+    border: none;
+    color: var(--text-dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+}
+
+.search-btn-inline:hover {
+    color: var(--accent-color);
+}
+
+/* ============================================
+   Paintings Section Header
+   ============================================ */
+
+.paintings-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--background-light);
+}
+
+.paintings-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.paintings-icon-left,
+.paintings-icon-right {
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    flex: 1;
+    max-width: 200px;
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ============================================
+   Art Carousel Sections
+   ============================================ */
+
+.curators-picks,
+.trending-art,
+.featured-artist {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--background-white);
+}
+
+.curators-picks .section-title,
+.trending-art .section-title,
+.featured-artist .section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.art-carousel {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    position: relative;
+}
+
+.carousel-btn {
+    background-color: var(--text-dark);
+    color: var(--background-white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    flex: 1;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.art-item {
+    background-color: var(--background-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    cursor: pointer;
+    position: relative;
+}
+
+.like-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.like-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.like-btn.liked {
+    color: #ff4444;
+}
+
+.like-btn.liked .heart-filled {
+    color: #ff4444;
+}
+
+.art-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.art-item-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    background-color: var(--background-light);
+}
+
+.art-item-info {
+    padding: var(--spacing-sm);
+}
+
+.art-item-title {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.art-item-artist {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.art-item-price {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+/* ============================================
+   About Us Section
+   ============================================ */
+
+.about-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--background-light);
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-title {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-content {
+    margin-bottom: var(--spacing-lg);
+}
+
+.about-text {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+    text-align: justify;
+}
+
+.contact-info {
+    text-align: center;
+    padding-top: var(--spacing-md);
+    border-top: 2px solid var(--border-color);
+}
+
+.contact-label {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-xs);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-email,
+.contact-phone {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--text-dark);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.social-icon:hover {
+    background-color: var(--accent-color);
+}
+
+/* ============================================
+   Paintings Page Specific Styles
+   ============================================ */
+
+.page-title-section {
+    padding: var(--spacing-lg) var(--spacing-md);
+    background-color: var(--background-light);
+    text-align: center;
+}
+
+.page-title {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.filters-section {
+    padding: var(--spacing-lg) var(--spacing-md);
+    background-color: var(--background-white);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.filters-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filter-icon {
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+}
+
+.filters-title {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    flex: 1;
+}
+
+.clear-all-btn {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text-light);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color var(--transition-fast);
+}
+
+.clear-all-btn:hover {
+    color: var(--text-dark);
+}
+
+.filters-description {
+    max-width: 1400px;
+    margin: 0 auto var(--spacing-md);
+}
+
+.filters-description p {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.filters-row {
+    display: flex;
+    gap: var(--spacing-md);
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.filter-dropdown {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    background-color: var(--background-white);
+}
+
+.filter-dropdown:hover {
+    border-color: var(--text-dark);
+    background-color: var(--background-light);
+}
+
+.filter-separator {
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.filter-label {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dropdown-arrow {
+    color: var(--text-dark);
+    transition: transform var(--transition-fast);
+}
+
+.filter-dropdown:hover .dropdown-arrow {
+    transform: translateY(2px);
+}
+
+.paintings-grid-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--background-light);
+}
+
+.paintings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .header-actions {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .welcome-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .art-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: var(--spacing-sm);
+    }
+    
+    .logo-title {
+        font-size: 1.25rem;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .header-actions {
+        flex-wrap: wrap;
+    }
+    
+    .btn {
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+    }
+    
+    .welcome-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .art-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--spacing-sm);
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .filters-row {
+        flex-direction: column;
+    }
+    
+    .filter-dropdown {
+        width: 100%;
+    }
+    
+    .paintings-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-section {
+        min-height: 400px;
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+    
+    .welcome-title {
+        font-size: 1.5rem;
+    }
+    
+    .search-container {
+        flex-direction: column;
+        border-radius: 8px;
+    }
+    
+    .search-btn {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: var(--spacing-xs);
+    }
+    
+    .art-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .paintings-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.art-item {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ============================================
+   Interactive Elements
+   ============================================ */
+
+.add-to-cart-btn {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.5rem;
+    background-color: var(--text-dark);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color var(--transition-fast);
+    font-family: var(--font-sans);
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.filter-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    animation: fadeIn 0.2s ease;
+}
+
+.filter-option {
+    padding: 0.75rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color var(--transition-fast);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+}
+
+.filter-option:hover {
+    background-color: var(--background-light);
+}
+
+.filter-option.selected {
+    background-color: var(--background-light);
+    font-weight: 700;
+}
+
+.profile-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    animation: fadeIn 0.2s ease;
+}
+
+.profile-menu > div > div {
+    padding: 0.75rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color var(--transition-fast);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+}
+
+.profile-menu > div > div:hover {
+    background-color: var(--background-light);
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.hidden {
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+
+

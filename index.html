@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art of the Century - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&family=Seaweed+Script&family=PT+Serif:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="image-config.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo-text">
+                    <h1 class="logo-title">Art of the Century</h1>
+                    <p class="logo-subtitle">Art's from artist, from across the century.</p>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-link">ALL ART</a>
+                <a href="paintings.html" class="nav-link">PAINTINGS</a>
+                <a href="#" class="nav-link">SCULPTURES</a>
+                <a href="#" class="nav-link">PHOTOGRAPHY</a>
+                <a href="#" class="nav-link">ARTISTS</a>
+            </nav>
+            <div class="header-actions">
+                <div class="search-icon">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                        <circle cx="14" cy="14" r="8" stroke="currentColor" stroke-width="2"/>
+                        <path d="M20 20l-4-4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="like-icon" title="View Liked Art">
+                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+                        <path d="M19 33L8.5 22.5C4.5 18.5 4.5 12 8.5 8C10.5 6 13 5 15.5 5C18 5 20.5 6 22.5 8L19 11.5L15.5 8C13.5 6 11 5 8.5 5C6 5 3.5 6 1.5 8C-2.5 12 -2.5 18.5 1.5 22.5L12 33L19 33Z" stroke="currentColor" stroke-width="2" fill="none" class="heart-outline"/>
+                        <path d="M19 33L8.5 22.5C4.5 18.5 4.5 12 8.5 8C10.5 6 13 5 15.5 5C18 5 20.5 6 22.5 8L19 11.5L15.5 8C13.5 6 11 5 8.5 5C6 5 3.5 6 1.5 8C-2.5 12 -2.5 18.5 1.5 22.5L12 33L19 33Z" stroke="currentColor" stroke-width="2" fill="currentColor" class="heart-filled" style="display: none;"/>
+                    </svg>
+                    <span class="like-badge">0</span>
+                </div>
+                <div class="cart-icon" title="Shopping Cart">
+                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+                        <path d="M11 11L9 3H3M11 11H27L25 11M11 11L13 19H25M27 27C27.5523 27 28 26.5523 28 26C28 25.4477 27.5523 25 27 25C26.4477 25 26 25.4477 26 26C26 26.5523 26.4477 27 27 27Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="cart-badge">0</span>
+                </div>
+                <div class="profile-icon" title="Profile">
+                    <svg width="38" height="34" viewBox="0 0 38 34" fill="none">
+                        <path d="M19 19C23.4183 19 27 15.4183 27 11C27 6.58172 23.4183 3 19 3C14.5817 3 11 6.58172 11 11C11 15.4183 14.5817 19 19 19Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M3 31C3 25.4772 7.47715 21 13 21H25C30.5228 21 35 25.4772 35 31" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span class="profile-badge">2</span>
+                </div>
+                <button class="btn btn-login">Login</button>
+                <button class="btn btn-signup">Sign Up</button>
+            </div>
+        </div>
+        <div class="nav-divider"></div>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <div class="welcome-background"></div>
+        <div class="welcome-content">
+            <h2 class="welcome-title">Welcome to Art of the Century!</h2>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Type your search">
+                <button class="search-btn">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                        <circle cx="14" cy="14" r="8" stroke="currentColor" stroke-width="2"/>
+                        <path d="M20 20l-4-4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAINTINGS Section -->
+    <section class="paintings-section">
+        <div class="paintings-header">
+            <div class="paintings-icon-left"></div>
+            <h2 class="section-title">PAINTINGS</h2>
+            <div class="paintings-icon-right"></div>
+        </div>
+    </section>
+
+    <!-- Curator's Picks -->
+    <section class="curators-picks">
+        <h2 class="section-title">Curator's Picks</h2>
+        <div class="art-carousel" id="curatorsPicks">
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-prev" id="curatorsPrev">‹</button>
+                <div class="art-grid" id="curatorsGrid">
+                    <!-- Art items will be populated by JavaScript -->
+                </div>
+                <button class="carousel-btn carousel-next" id="curatorsNext">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Art -->
+    <section class="trending-art">
+        <h2 class="section-title">Trending Art</h2>
+        <div class="art-carousel" id="trendingArt">
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-prev" id="trendingPrev">‹</button>
+                <div class="art-grid" id="trendingGrid">
+                    <!-- Art items will be populated by JavaScript -->
+                </div>
+                <button class="carousel-btn carousel-next" id="trendingNext">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Artist -->
+    <section class="featured-artist">
+        <h2 class="section-title">Featured Artist</h2>
+        <div class="art-carousel" id="featuredArtist">
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-prev" id="featuredPrev">‹</button>
+                <div class="art-grid" id="featuredGrid">
+                    <!-- Art items will be populated by JavaScript -->
+                </div>
+                <button class="carousel-btn carousel-next" id="featuredNext">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <h2 class="about-title">About Us</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    Art of the Century is a digital gateway to explore the creativity of artists who have shaped the world through their vision, style, and cultural influence. Whether you're a student, art enthusiast, or lifelong learner, this platform aims to enrich your understanding and appreciation of artistic evolution across centuries.
+                </p>
+                <p class="about-text">
+                    Art is not just the creation of images. it's a reflection of humanity's history, culture, and emotions. Here at Art of the Century, learning is more than understanding the craft. it's about uncovering the stories, struggles, and inspirations behind the masterpieces.
+                </p>
+            </div>
+            <div class="contact-info">
+                <p class="contact-label">For inquiries:</p>
+                <p class="contact-email">ArtOfTheCentury@gmail.com</p>
+                <p class="contact-phone">#09266267484</p>
+                <div class="social-icons">
+                    <div class="social-icon email-icon"></div>
+                    <div class="social-icon other-icon"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

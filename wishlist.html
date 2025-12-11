@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art of the Century - Liked Art</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&family=Seaweed+Script&family=PT+Serif:wght@400;700&family=Inter:wght@400;700&family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="image-config.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <a href="index.html" class="home-link">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                        <path d="M3 13L13 3L23 13M6 13V21C6 21.5523 6.44772 22 7 22H10V17C10 16.4477 10.4477 16 11 16H15C15.5523 16 16 16.4477 16 17V22H19C19.5523 22 20 21.5523 20 21V13" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <div class="logo-text">
+                    <h1 class="logo-title">Art of the Century</h1>
+                    <p class="logo-subtitle">Art's from artist, from across the century.</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="search-container-inline">
+                    <input type="text" class="search-input-inline" placeholder="Type your search">
+                    <button class="search-btn-inline">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                            <circle cx="7" cy="7" r="4" stroke="currentColor" stroke-width="1"/>
+                            <path d="M10 10l-2-2" stroke="currentColor" stroke-width="1"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="like-icon active" title="View Liked Art">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
+                        <path d="M12.5 21.5L5.5 14.5C2.5 11.5 2.5 6.5 5.5 3.5C7 2 9 1.5 11 1.5C13 1.5 15 2 16.5 3.5L12.5 7.5L8.5 3.5C7 2 5 1.5 3 1.5C1 1.5 -0.5 2 -2 3.5C-5 6.5 -5 11.5 -2 14.5L5.5 21.5L12.5 21.5Z" stroke="currentColor" stroke-width="1.5" fill="currentColor"/>
+                    </svg>
+                    <span class="like-badge">0</span>
+                </div>
+                <div class="cart-icon" title="Shopping Cart">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
+                        <path d="M7 7L6 2H2M7 7H18L17 7M7 7L8 12H18M18 18C18.5523 18 19 17.5523 19 17C19 16.4477 18.5523 16 18 16C17.4477 16 17 16.4477 17 17C17 17.5523 17.4477 18 18 18Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="cart-badge">0</span>
+                </div>
+                <div class="profile-icon" title="Profile">
+                    <svg width="23" height="20" viewBox="0 0 23 20" fill="none">
+                        <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M2 16C2 13.2386 4.23858 11 7 11H17C19.7614 11 22 13.2386 22 16" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    <span class="profile-badge">2</span>
+                </div>
+            </div>
+        </div>
+        <div class="nav-divider"></div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title-section">
+        <h1 class="page-title">Your Liked Art</h1>
+        <p style="text-align: center; color: #666; margin-top: 1rem;">Artworks you've saved to your wishlist</p>
+    </section>
+
+    <!-- Liked Art Grid -->
+    <section class="paintings-grid-section">
+        <div class="paintings-grid" id="likedArtGrid">
+            <!-- Liked art items will be populated by JavaScript -->
+        </div>
+        <div id="emptyWishlist" style="display: none; text-align: center; padding: 4rem 2rem;">
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" style="margin: 0 auto 2rem; opacity: 0.3;">
+                <path d="M60 100L20 60C10 50 10 35 20 25C25 20 32.5 17.5 40 17.5C47.5 17.5 55 20 60 25L60 25L60 25C65 20 72.5 17.5 80 17.5C87.5 17.5 95 20 100 25C110 35 110 50 100 60L60 100Z" stroke="currentColor" stroke-width="3" fill="none"/>
+            </svg>
+            <h2 style="font-family: var(--font-primary); font-size: 2rem; margin-bottom: 1rem; color: var(--text-dark);">Your wishlist is empty</h2>
+            <p style="color: var(--text-light); margin-bottom: 2rem;">Start liking artworks to save them here!</p>
+            <a href="paintings.html" class="btn" style="display: inline-block; text-decoration: none;">Browse Art</a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
